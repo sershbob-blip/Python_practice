@@ -1,2 +1,1 @@
-"# Python_practice" 
-"# Python_practice" 
+Just first Python lessons
