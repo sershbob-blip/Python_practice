@@ -33,14 +33,14 @@
 Для простоты: посчитай сумму rest и подели на длину rest. 
 Но дополнительно сделай проверку: если длина rest равна 0 — выведи Делить не на что.
 '''
-#values = [100, 20, 5, 0, 8]
-values = [23, 567, None, 7, 4]
-first, second, *rest = values
+# #values = [100, 20, 5, 0, 8]
+# # values = [23, 567]
+# first, second, *rest = values
 # try:
 #     print(round(sum(rest)/len(rest),1))
 # except:
 #     print('Делить не на что')
-print(sum(rest))
+
 '''
 ДЗ
 Цель: научиться передавать словарь как именованные аргументы 
@@ -56,7 +56,11 @@ create_user(name="Мария", age=25)
 
 create_user(name="Иван") (должно вызвать ошибку).
 '''
+def create_user(**kwargs):
+    print(f'Пользователь:{}, возраст:{}')
 
+create_user(name="Мария", age=25)
+#create_user(name="Иван") 
 '''
 ДЗ
 Цель: распаковать кортежи в цикле и обработать ValueError при преобразовании строки в число.
