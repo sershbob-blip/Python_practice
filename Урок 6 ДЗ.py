@@ -22,7 +22,15 @@
 и возвращает список только тех, которые являются числами (int или float).
 Вызови её с разными типами: collect_numbers(10, "abc", 3.5, None, 7).
 '''
-#########################
+# def collect_numbers(*args):
+#     digits = []
+#     for arg in args:
+#         if isinstance(arg, (int, float)):
+#             digits.append(arg)
+#     print(digits)
+
+# # collect_numbers(10, "abc", 3.5, None, 7)
+# # collect_numbers(10, '4', ('hello', 5),  "abc", 3.5, None, 7, ['list', 67])
 '''
 ДЗ
 Условие:
@@ -56,15 +64,15 @@ create_user(name="Мария", age=25)
 
 create_user(name="Иван") (должно вызвать ошибку).
 '''
-def create_user(**kwargs):
-    try:
-        print(f'Пользователь: {kwargs['name']}, возраст: {kwargs['age']}')
-    except:
-        print('Ошибка: недостаточно данных или данные указаны неверно')
+# def create_user(**kwargs):
+#     try:
+#         print(f'Пользователь: {kwargs['name']}, возраст: {kwargs['age']}')
+#     except:
+#         print('Ошибка: недостаточно данных или данные указаны неверно')
 
-# create_user(name="Мария", age=25)
-# create_user(name="Иван") 
-# create_user(name="Глеб", hobby='tennis') 
+# # create_user(name="Мария", age=25)
+# # create_user(name="Иван") 
+# # create_user(name="Глеб", hobby='tennis') 
 '''
 ДЗ
 Цель: распаковать кортежи в цикле и обработать ValueError при преобразовании строки в число.
@@ -119,3 +127,26 @@ tax_rate — ставка налога (по умолчанию 0.2).
 
 Заказ с отрицательным tax_rate.
 '''
+# def make_order(customer, *items, tax_rate=0.2, **options):
+#     if not items:
+#         raise ValueError("Нет товаров в заказе")
+#     if tax_rate < 0:
+#         raise ValueError("Ставка налога не может быть отрицательной")
+#     discount = options.get('discount', 0)
+#     currency = options.get('currency', 'rub')
+#     if discount < 0 or discount > 1:
+#         raise ValueError("Скидка должна быть от 0 до 1")
+#     result = {
+#     "customer": customer,
+#     "items": list(items),
+#     "tax_rate": tax_rate,
+#     "discount": discount,
+#     "currency": currency
+# }
+#     return result
+
+# # answer = make_order("Иван", "Книга", "Ручка", tax_rate=0.2)
+# # answer = make_order("Иван", tax_rate=0.2)
+# # answer = make_order("Иван", "Книга", "Ручка", tax_rate=-2)
+# # answer = make_order("Иван", "Книга", "Ручка", tax_rate=0.1, discount=2)
+# print(answer)
