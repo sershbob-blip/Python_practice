@@ -7,13 +7,13 @@
 
 Проверь также вариант, когда data = ("Борис", 30) (не хватает одного элемента).
 '''
-# #data = ("Анна", 28, "Москва")
-# #data = ('Борис', 30)
+# # data = ("Анна", 28, "Москва")
+# data = ('Борис', 30)
 # try:
 #     name, age, city = data
 # except:
 #     print('Ошибка распаковки: неверный формат данных')
-# #print(name)
+# print(name)
 
 '''
 ДЗ
@@ -33,7 +33,7 @@
 Для простоты: посчитай сумму rest и подели на длину rest. 
 Но дополнительно сделай проверку: если длина rest равна 0 — выведи Делить не на что.
 '''
-# #values = [100, 20, 5, 0, 8]
+# values = [100, 20, 5, 0, 8]
 # # values = [23, 567]
 # first, second, *rest = values
 # try:
@@ -57,10 +57,14 @@ create_user(name="Мария", age=25)
 create_user(name="Иван") (должно вызвать ошибку).
 '''
 def create_user(**kwargs):
-    print(f'Пользователь:{}, возраст:{}')
+    try:
+        print(f'Пользователь: {kwargs['name']}, возраст: {kwargs['age']}')
+    except:
+        print('Ошибка: недостаточно данных или данные указаны неверно')
 
-create_user(name="Мария", age=25)
-#create_user(name="Иван") 
+# create_user(name="Мария", age=25)
+# create_user(name="Иван") 
+# create_user(name="Глеб", hobby='tennis') 
 '''
 ДЗ
 Цель: распаковать кортежи в цикле и обработать ValueError при преобразовании строки в число.
@@ -72,6 +76,17 @@ create_user(name="Мария", age=25)
 Ошибка: возраст для <name> не является числом, но не прерывай цикл.
 Для корректных записей выведи: <name>: <age>.
 '''
+# records = [("Анна", "25"), ("Борис", "тридцать"), ("Виктор", "30")]
+
+# for record in records:
+#     name, age_str = record
+#     try:
+#         int(age_str)
+#         print(f'{name}, {age_str}')
+#     except:
+#         print(f'Возраст для {name} не является числом')
+#         continue
+    
 
 '''
 ДЗ
