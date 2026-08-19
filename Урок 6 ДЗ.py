@@ -11,9 +11,10 @@
 # data = ('Борис', 30)
 # try:
 #     name, age, city = data
+#     print(name)
 # except:
 #     print('Ошибка распаковки: неверный формат данных')
-# print(name)
+
 
 '''
 ДЗ
@@ -43,11 +44,15 @@
 '''
 # values = [100, 20, 5, 0, 8]
 # # values = [23, 567]
+# # values = [0, 0, 0]
 # first, second, *rest = values
 # try:
-#     print(round(sum(rest)/len(rest),1))
+#     if len(rest)>0:
+#         print(round(sum(rest)/len(rest),1))
+#     else:
+#         print('Делить не на что')
 # except:
-#     print('Делить не на что')
+#     print('Ошибка')
 
 '''
 ДЗ
@@ -127,7 +132,7 @@ tax_rate — ставка налога (по умолчанию 0.2).
 
 Заказ с отрицательным tax_rate.
 '''
-# def make_order(customer, *items, tax_rate=0.2, **options):
+# def make_order(customer, *items, tax_rate=0.2, **options):   
 #     if not items:
 #         raise ValueError("Нет товаров в заказе")
 #     if tax_rate < 0:
@@ -149,4 +154,4 @@ tax_rate — ставка налога (по умолчанию 0.2).
 # # answer = make_order("Иван", tax_rate=0.2)
 # # answer = make_order("Иван", "Книга", "Ручка", tax_rate=-2)
 # # answer = make_order("Иван", "Книга", "Ручка", tax_rate=0.1, discount=2)
-# print(answer)
+# # print(answer)
