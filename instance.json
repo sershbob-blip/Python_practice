@@ -1,0 +1,8 @@
+{
+  "user": {
+    "name": "Bob",
+    "roles": ["admin", "editor"],
+    "active": true
+  },
+  "version": 1
+}

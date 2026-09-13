@@ -27,7 +27,7 @@
 
 # print(query)
 
-!!!!!#написать функцию
+#написать функцию!!!!
 
 '''
 ДЗ
@@ -41,6 +41,18 @@ json_str = '{"name": "Alice", "age": 30, "city": "Moscow"}'
 Преобразуй словарь обратно в JSON‑строку (с отступами для читаемости) через json.dumps().
 Выведи результат.
 '''
+# import json
+
+# json_str = '{"name": "Alice", "age": 30, "city": "Moscow"}'
+
+# dict_1 = json.loads(json_str)
+
+# dict_1['country'] = 'Russia'
+
+# result = json.dumps(dict_1, sort_keys=True, indent=4)
+
+# print(result)
+
 '''
 ДЗ
  urllib.parse + JSON
@@ -57,6 +69,8 @@ params — словарь параметров,
 raw_query — исходная query‑строка.
 Преобразуй этот словарь в JSON‑строку и выведи.
 '''
+
+
 '''
 ДЗ
 Чтение JSON из файла и вывод полей
@@ -75,3 +89,15 @@ json
 Выведи: имя пользователя, количество ролей, статус active.
 Если ключа нет — выведи понятное сообщение, а не ошибку.
 '''
+import json
+
+with open('instance.json', 'r', encoding='utf-8') as file:
+    data = json.load(file)
+
+try:
+  print(data['user']['name'])
+  print(data['user']['roles'])
+  print(data['user']['active'])
+  print(data['user']['wrong_key'])
+except:
+  print('Ошибка:ключ не найден')
