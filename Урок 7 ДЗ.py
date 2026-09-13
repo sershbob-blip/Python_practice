@@ -131,7 +131,7 @@ encoded_url = 'https://example.com?param=%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0
 
 # print(query)
 
-# #написать функцию
+!!!!!#написать функцию
 
 '''
 ДЗ
@@ -177,4 +177,61 @@ book_jsn = json.dumps(book, ensure_ascii=False)
 print(book_jsn)
 
 
-credentials = json.loads(os.getenv("gs_key"))
+
+##################################################
+from urllib.parse import unquote
+
+encoded = "Hello%20World%21%20Привет%20Мир"
+decoded = unquote(encoded)
+print(decoded)
+# Вывод: Hello World! Привет Мир
+
+from urllib.parse import urlparse, parse_qs
+
+url = "https://example.com/search?q=кофе&lang=ru"
+parsed = urlparse(url)
+params = parse_qs(parsed.query)
+
+print(params)
+# {'q': ['кофе'], 'lang': ['ru']}
+
+пробел становится %20, буква «ё» — %D1%91
+
+url = "https://user:pass@www.example.com:8080/path/to/page;params?query=123#section"
+parsed = urlparse(url)
+
+print(parsed)
+
+
+ParseResult(
+  scheme='https',
+  netloc='user:pass@www.example.com:8080',
+  path='/path/to/page',
+  params='params',
+  query='query=123',
+  fragment='section'
+)
+
+query = urlencode(params, doseq=True)
+
+import json
+
+json_str = '{"name": "Анна", "age": 21, "courses": ["Python", "SQL"]}'
+data = json.loads(json_str)
+
+print(data["name"])          # Анна
+print(data["courses"][0])    # Python
+print(type(data))            # <class 'dict'>
+
+data = {
+    "name": "Анна",
+    "age": 21,
+    "courses": ["Python", "SQL"],
+    "active": True
+}
+
+json_str = json.dumps(data)
+print(json_str)
+# {"name": "Анна", "age": 21, "courses": ["Python", "SQL"], "active": true}
+
+pretty = json.dumps(data, indent=2, ensure_ascii=False)
