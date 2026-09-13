@@ -89,15 +89,15 @@ json
 Выведи: имя пользователя, количество ролей, статус active.
 Если ключа нет — выведи понятное сообщение, а не ошибку.
 '''
-import json
+# import json
 
-with open('instance.json', 'r', encoding='utf-8') as file:
-    data = json.load(file)
+# with open('instance.json', 'r', encoding='utf-8') as file:
+#     data = json.load(file)
 
-try:
-  print(data['user']['name'])
-  print(data['user']['roles'])
-  print(data['user']['active'])
-  print(data['user']['wrong_key'])
-except:
-  print('Ошибка:ключ не найден')
+# try:
+#   print(data['user']['name'])
+#   print(data['user']['roles'])
+#   print(data['user']['active'])
+#   print(data['user']['wrong_key'])
+# except:
+#   print('Ошибка:ключ не найден')
