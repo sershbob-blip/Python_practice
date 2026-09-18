@@ -15,7 +15,7 @@
 Исходные данные:
 
 '''
-# from urllib.parse import urlencode
+# from urllib.parse import urlencode, quote
 # params = {
 #     'search': 'значение',
 #     'page': 2,
@@ -23,11 +23,29 @@
 #     'sort': 'asc'
 # }
 
-# query = urlencode(params, doseq=True)
+# def clean_params(params:dict):
+#   return {
+#     k:v
+#     for k,v in params.items()
+#     if v is not None and v != '' and v != [] and v != {}
+#   }
+
+# def format_query(params: dict, 
+#                  sort: bool = True, 
+#                  skip_empty: bool = True):
+
+#     if skip_empty:
+#         params = clean_params(params)
+    
+#     if sort:
+#         params = dict(sorted(params.items()))
+    
+#     return urlencode(params, doseq=True, quote_via=quote)
+
+# query = format_query(params, sort = True, skip_empty = True)
 
 # print(query)
 
-#написать функцию!!!!
 
 '''
 ДЗ
@@ -69,8 +87,21 @@ params — словарь параметров,
 raw_query — исходная query‑строка.
 Преобразуй этот словарь в JSON‑строку и выведи.
 '''
+# import urllib.parse
+# import json
 
+# url = "https://api.example.com/search?q=python&lang=ru&page=2&sort=desc"
+# sep_url = urllib.parse.urlparse(url)
+# params = urllib.parse.parse_qs(sep_url.query)
+# result = {
+#   'base_url':f'{sep_url.scheme}://{sep_url.netloc}{sep_url.path}' ,
+#   'params': params,
+#   'raw_query': sep_url.query
+# }
 
+# result_json = json.dumps(result, ensure_ascii=False, indent=2)
+
+# print(result_json)
 '''
 ДЗ
 Чтение JSON из файла и вывод полей
@@ -95,9 +126,7 @@ json
 #     data = json.load(file)
 
 # try:
-#   print(data['user']['name'])
-#   print(data['user']['roles'])
-#   print(data['user']['active'])
-#   print(data['user']['wrong_key'])
+#   for k, v in data['user'].items(): 
+#     print(k, v)
 # except:
 #   print('Ошибка:ключ не найден')
