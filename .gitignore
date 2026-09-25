@@ -1,1 +1,13 @@
 .venv/
+
+# Кэш Python
+__pycache__/
+*.py[cod]
+
+# Автоматические копии Jupyter
+.ipynb_checkpoints/
+
+# Локальные переменные окружения (могут содержать пароли и ключи)
+.env
+.env.*
+!.env.example
