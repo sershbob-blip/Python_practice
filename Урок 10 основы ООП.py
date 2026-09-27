@@ -44,26 +44,41 @@
 
 # greet.start_talking('Саша', True)
 
-class Car:
-    def __init__ (self, color):
-        self.engine_on = False
-        self.color = color
+# class Car:
+#     def __init__ (self, color):
+#         self.engine_on = False
+#         self.color = color
 
-    def start_engine(self):
-        self.engine_on = True
+#     def start_engine(self):
+#         self.engine_on = True
 
-    def drive_to (self, city):
-        if self.engine_on:
-            print ('{} car drive to city {}.'.format(self.color, city))
-        else:
-            print ('{} car isn`t started, so we`re not going anywhere'.format(self.color))
+#     def drive_to (self, city):
+#         if self.engine_on:
+#             print ('{} car drive to city {}.'.format(self.color, city))
+#         else:
+#             print ('{} car isn`t started, so we`re not going anywhere'.format(self.color))
 
-car1 = Car('red')
+# car1 = Car('red')
 
-car2 = Car('blue')
+# car2 = Car('blue')
 
-car1.start_engine()
+# car1.start_engine()
 
-car1.drive_to ('Vladivostok')
+# car1.drive_to ('Vladivostok')
 
-car2.drive_to ('Lissabohn')
+# car2.drive_to ('Lissabohn')
+
+class RoboticMailDelivery
+    def __init__(self):
+        self.house_flat_pairs = []
+
+    def add_mail (self, house_number, flat_number):
+        self.house_flat_pairs.append((house_number, flat_number))
+
+    def flat_numbers_for_house (self, house_number):
+        flat_numbers = []
+        for h,f in selg.house_flat_pairs:
+            if h == house_number:
+                flat_numbers.append(f)
+        return flat_numbers
+
