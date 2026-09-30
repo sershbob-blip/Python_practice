@@ -68,7 +68,7 @@
 
 # car2.drive_to ('Lissabohn')
 
-class RoboticMailDelivery
+class RoboticMailDelivery:
     def __init__(self):
         self.house_flat_pairs = []
 
@@ -81,4 +81,3 @@ class RoboticMailDelivery
             if h == house_number:
                 flat_numbers.append(f)
         return flat_numbers
-
