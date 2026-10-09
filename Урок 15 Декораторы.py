@@ -14,6 +14,8 @@ def use_uppercased_arguments (old_func):
     def new_func (*args, **kwargs):
         argsUpcased = [str (arg).upper () for arg in args]
         old_func (*argsUpcased, **kwargs)
-        return new_func
+    return new_func
 
 print = use_uppercased_arguments (print)
+
+print('Нельзя ли потише?')
