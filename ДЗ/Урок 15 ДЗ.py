@@ -27,9 +27,22 @@ print (fib (60))
 v1.sum (v2) — возращает сумму векторов.
 '''
 
+
 class Vector:
     def __init__(self, x,y):
         self.x = x
         self.y = y
 
-    def get
+    def get(self):
+        return (self.x, self.y)
+
+    def sum(self, v2):
+        
+        return (self.x + v2.x, self.y + v2.y)
+
+
+v1 = Vector(2, 3)
+
+v2 = Vector(4, 5)
+
+print(v1.sum(v2))
