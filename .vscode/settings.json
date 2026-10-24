@@ -1,4 +1,7 @@
 {
     "python-envs.defaultEnvManager": "ms-python.python:venv",
-    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe"
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+    "code-runner.executorMap": {
+        "python": "python -X utf8 -u"
+    }
 }
