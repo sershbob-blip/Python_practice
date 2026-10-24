@@ -24,6 +24,7 @@ class Shape:
 
 # наследование
 
+'''
 class A:
     pass
 
@@ -43,3 +44,25 @@ c = C()
 c.foo()  # ok
 
 c.bar()  # error
+'''
+
+'''
+class BaseC:
+
+    def bar(self):
+        print('bar')
+
+
+class C (BaseC):
+    def foo(self):
+        print('foo')
+
+
+c = C()
+
+c.foo()  # ok — этoт мeтoд ecть в пpoизвoднoм клacce
+
+c.bar()  # ok — этoт мeтoд ecть в бaзoвoм клacce
+
+c.baz()  # error
+'''
