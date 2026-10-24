@@ -98,7 +98,7 @@ class Circle (Shape):
 
     def square(self):
         side = pi ** 0.5 * self.r
-        return Rectangle (side, side)
+        return Rectangle(side, side)
 
 
 circle = Circle(1)
