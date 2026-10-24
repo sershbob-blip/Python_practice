@@ -11,6 +11,7 @@ print('Нeльзя ли пoтишe?')
 
 
 def use_uppercased_arguments(old_func):
+
     def new_func(*args, **kwargs):
         argsUpcased = [str(arg).upper() for arg in args]
         old_func(*argsUpcased, **kwargs)
@@ -56,7 +57,8 @@ drinking_type('вода')
 
 
 def logged(func):
-    count = 0 
+    count = 0
+
     def decorated_func(*args, **kwargs):
         nonlocal count
         count += 1

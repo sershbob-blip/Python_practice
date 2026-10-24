@@ -8,6 +8,20 @@
 Запарольте этим декоратором функцию вычисления числа Фибоначчи.
 '''
 
+
+def check_password(func):
+    def wrapper(*args, **kwargs):
+        password = 'begin'
+        input_passw = input('Введите пароль: ')
+        
+        if input_passw == password:
+            result = func(*args, **kwargs)
+            return result
+        else:
+            print('В доступе отказано')
+            return None
+    return wrapper
+
 # функция Фибонначчи
 
 
@@ -25,6 +39,7 @@ def cached(func):
     return wrapper
 
 
+@check_password
 @cached
 def fib(n):
     if n == 1 or n == 2:
