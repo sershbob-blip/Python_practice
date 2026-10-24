@@ -88,11 +88,11 @@ class Circle (Shape):
 
 class Rectangle(Shape):
     def __init__(self, a, b):
-        self. a = a
-        self. b = b
+        self.a = a
+        self.b = b
 
     def area(self):
-        return self. a * self. b
+        return self.a * self.b
 
 
 shape = Shape()
