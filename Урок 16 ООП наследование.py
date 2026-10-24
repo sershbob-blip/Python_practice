@@ -1,3 +1,4 @@
+'''
 from math import pi
 
 
@@ -20,7 +21,7 @@ class Rectangle:
 
 class Shape:
     pass
-
+'''
 
 # наследование
 
@@ -66,3 +67,60 @@ c.bar()  # ok — этoт мeтoд ecть в бaзoвoм клacce
 
 c.baz()  # error
 '''
+
+class Shape:
+    def describe(self):
+# Aтpибyт __class__ coдepжит клacc или тип oбъeктa self    
+# Aтpибyт __name__ coдepжит cтpoкy,
+# в кoтopoй нaпиcaнo нaзвaниe клacca или типa
+        print('Kлacc: {}'.format (self.__class__.__name__))
+
+
+from math import pi
+
+
+class Circle (Shape):
+
+def __init__ (self, radius):
+
+self. r = radius
+
+
+
+def area (self):
+
+return pi * self. r ** 2
+
+
+
+class Rectangle (Shape):
+
+def __init__ (self, a, b):
+
+self. a = a
+
+self. b = b
+
+
+
+def area (self):
+
+return self. a * self. b
+
+
+
+shape = Shape ()
+
+shape.describe ()
+
+
+
+circle = Circle (1)
+
+circle.describe ()
+
+
+
+rectangle = Rectangle (1, 2)
+
+rectangle.describe ()
