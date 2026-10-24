@@ -79,48 +79,31 @@ class Shape:
 from math import pi
 
 
-class Circle (Shape):
+class Circle (Shape): 
+    def __init__(self, radius):    
+        self.r = radius
 
-def __init__ (self, radius):
-
-self. r = radius
-
-
-
-def area (self):
-
-return pi * self. r ** 2
+    def area(self):
+        return pi * self. r ** 2
 
 
+class Rectangle(Shape):
+    def __init__(self, a, b):
+        self. a = a
+        self. b = b
 
-class Rectangle (Shape):
-
-def __init__ (self, a, b):
-
-self. a = a
-
-self. b = b
-
+    def area(self):
+        return self. a * self. b
 
 
-def area (self):
+shape = Shape()
 
-return self. a * self. b
+shape.describe()
 
+circle = Circle(1)
 
+circle.describe()
 
-shape = Shape ()
+rectangle = Rectangle(1, 2)
 
-shape.describe ()
-
-
-
-circle = Circle (1)
-
-circle.describe ()
-
-
-
-rectangle = Rectangle (1, 2)
-
-rectangle.describe ()
+rectangle.describe()
