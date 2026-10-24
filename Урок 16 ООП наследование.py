@@ -11,8 +11,12 @@ class Circle:
 
 class Rectangle:
     def __init__ (self, a, b):
-    self. a = a
-    self. b = b
+    self.a = a
+    self.b = b
 
     def area (self):
         return self. a * self. b
+
+
+class Shape:
+    pass
