@@ -10,16 +10,21 @@
 
 
 def check_password(func):
+    authorized = False
+
     def wrapper(*args, **kwargs):
+        nonlocal authorized
         password = 'begin'
-        input_passw = input('Введите пароль: ')
-        
-        if input_passw == password:
-            result = func(*args, **kwargs)
-            return result
-        else:
-            print('В доступе отказано')
-            return None
+
+        if not authorized:
+            input_passw = input('Введите пароль: ')
+            if input_passw != password:
+                print('В доступе отказано')
+                return None
+            authorized = True
+
+        result = func(*args, **kwargs)
+        return result
     return wrapper
 
 # функция Фибонначчи
