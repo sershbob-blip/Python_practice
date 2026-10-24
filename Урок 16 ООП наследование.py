@@ -23,9 +23,23 @@ class Shape:
 
 
 # наследование
+
 class A:
     pass
 
 
 class B (A):
     pass
+
+
+class C:
+
+    def foo(self):
+        print('foo')
+
+
+c = C()
+
+c.foo()  # ok
+
+c.bar()  # error
