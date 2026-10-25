@@ -23,12 +23,12 @@ describe() — напечатать имя пользователя и допо�
 (т.е. результат работы метода info())
 
 Person — производный от класса User. Его конструктор должен принимать на вход два аргумента — 
-имя и дату рождения. Метод info () класса Person должен возвращать строку вида «Дата рождения:…» 
+имя и дату рождения. Метод info() класса Person должен возвращать строку вида «Дата рождения:…» 
 Также у Person должен быть реализован дополнительный метод subscribe (user), 
 где user — объект класса User.
 
 Community — производный от класса User. Его конструктор должен принимать на вход два аргумента — 
-имя и краткое описание. Метод info () класса Community должен возвращать строку вида «Описание:…»
+имя и краткое описание. Метод info() класса Community должен возвращать строку вида «Описание:…»
 '''
 
 
@@ -37,25 +37,59 @@ class User:
         self.name = name
 
     def send_message(self, user, message):
-        print(f'Отправить пользователю {user} сообщение: \"{message}\"')
+        print(f'Отправить пользователю {user.name} сообщение: \"{message}\"')
 
-    def post(message):
-        print(f'Отправить сообщение на стену:\"\{message}"')
+    def post(self, message):
+        print(f'Отправить сообщение на стену:\"{message}\"')
 
-    def info():
-        return None
+    def info(self):
+        return ''
 
     def describe(self):
-        print(f'{self.user}:{self.info}')
+        print(f'{self.name}: {self.info()}')
 
 
 class Person(User):
     def __init__(self, name, birthdate):
-        self.name = name
+        super().__init__(name)
         self.birthdate = birthdate
 
     def info(self):
-        print(f'Дата рождения: {self.birthdate}')
+        return f'Дата рождения: {self.birthdate}'
 
-    def subscribe(user):
-        print(f'Подписан на пользователя{user}')
+    def subscribe(self, user):
+        print(f'Подписан на пользователя {user.name}')
+
+
+class Community(User):
+    def __init__(self, name, description):
+        super().__init__(name)
+        self.description = description
+
+    def info(self):
+        return f'Описание: {self.description}'
+
+
+user_1 = User('Катя')
+
+user_2 = Person('Ваня', '1996-01-02')
+
+comm = Community('Котики', 'группа о милых котятах')
+
+user_1.send_message(user_2, "привет!")
+
+user_1.post("только зарегистрировалась")
+
+user_1.describe()
+
+print(user_2.info())
+
+user_2.describe()
+
+user_2.subscribe(user_1)
+
+print(comm.info())
+
+comm.describe()
+
+user_1.send_message(comm, 'хочу на вас подписаться')
