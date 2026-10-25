@@ -89,7 +89,7 @@ class Rectangle(Shape):
         return self.a * self.b
 
 
-class Circle (Shape): 
+class Circle (Shape):
     def __init__(self, radius):
         self.r = radius
 
