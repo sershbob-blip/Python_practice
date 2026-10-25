@@ -5,6 +5,7 @@
 вызов get_evens — чётные.
 '''
 
+
 class Selector:
     def __init__(self, numbers):
         self.numbers = numbers
@@ -23,9 +24,10 @@ class Selector:
                 evens.append(i)
         return evens
 
-numbers = Selector([1,2,3,4,5,7,8,9,10])
+
+numbers = Selector([1, 2, 3, 4, 5, 7, 8, 9, 10])
 
 print(numbers.get_odds())
 
 print(numbers.get_evens())
-        
+

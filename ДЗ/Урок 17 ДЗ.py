@@ -30,3 +30,17 @@ Person — производный от класса User. Его констру�
 Community — производный от класса User. Его конструктор должен принимать на вход два аргумента — 
 имя и краткое описание. Метод info () класса Community должен возвращать строку вида «Описание:…»
 '''
+
+
+class User:
+    def __init__(self, name):
+        self.name = name
+
+    def send_message(self, user, message):
+        print(f'Отправить пользователю {user} сообщение: \"{message}\"')
+
+    def post(message):
+        print(f'Отправить сообщение на стену:\"\{message}"')
+
+    def info():
+        
